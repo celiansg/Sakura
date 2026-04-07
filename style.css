@@ -1,0 +1,191 @@
+/* ============================================================
+   1. STYLE GÉNÉRAL ET FOND (Body)
+   ============================================================ */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Image de fond sur tous les onglets */
+    background-image: url('fond.jpg'); 
+    background-attachment: fixed; /* Fixe le fond au défilement */
+    background-size: cover;      /* Couvre tout l'écran */
+    background-repeat: no-repeat;
+    /* Espace pour ne pas que le contenu soit caché sous le menu fixe */
+    margin-top: 170px; 
+}
+
+/* ============================================================
+   2. MENU DE NAVIGATION (Header fixe)
+   ============================================================ */
+header {
+    background-color: #ff8fab;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    /* Positionnement fixe en haut (vu dans le cours) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Reste au-dessus du contenu */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 25px; /* Bordure arrondie */
+    text-decoration: none;
+    color: #ff4d88;
+    font-weight: bold;
+    transition: 0.3s; /* Pour un effet fluide */
+}
+
+/* Apparence dynamique (vu dans le cours) */
+nav a:hover {
+    background-color: #ff4d88;
+    color: white;
+}
+
+/* Classe pour l'onglet actif */
+nav a.active {
+    background-color: #ff4d88;
+    color: white;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* ============================================================
+   3. STRUCTURE DES BLOCS (Conteneurs blancs)
+   ============================================================ */
+#bloc {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 30px auto; /* Centrage horizontal */
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc transparent */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px #ffb3c6; /* Ombre décalée */
+    transition: 0.3s;
+}
+
+#bloc:hover {
+    box-shadow: 12px 12px 0px #ff8fab;
+}
+
+h2 {
+    color: #ff4d88;
+    text-align: center;
+    border-bottom: 2px dashed #ffb3c6;
+    padding-bottom: 10px;
+}
+
+/* ============================================================
+   4. SYSTÈME DE CARTES (Manga et Animé - Flexbox)
+   ============================================================ */
+.container-news {
+    display: flex;       /* Conteneur Flex */
+    flex-wrap: wrap;     /* Retour à la ligne automatique */
+    justify-content: center; /* Alignés au centre */
+    gap: 30px;           /* Espace entre les éléments */
+}
+
+.item-card {
+    width: 280px;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #ffb3c6;
+    overflow: hidden;    /* Coupe ce qui dépasse des arrondis */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Effet zoom au passage de la souris (vu dans le cours) */
+.item-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 77, 136, 0.3);
+}
+
+.item-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Recadre sans déformer */
+}
+
+.item-info {
+    padding: 15px;
+}
+
+.item-info h3 {
+    margin: 0;
+    color: #ff4d88;
+}
+
+.resume {
+    font-size: 0.9em;
+    font-style: italic; /* Texte en italique */
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* ============================================================
+   5. SECTIONS SPÉCIFIQUES (Infos Index et Tableaux)
+   ============================================================ */
+
+/* Box de chiffres clés sur l'index */
+.box-info {
+    flex: 1;
+    min-width: 200px;
+    background-color: #fff0f5;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px dashed #ff8fab;
+    text-align: center;
+}
+
+.box-info h3 {
+    font-size: 2.2em;
+    color: #ff4d88;
+    margin: 0;
+}
+
+/* Tableaux (pour les animés) */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Fusion des bordures */
+}
+
+th, td {
+    border: 1px solid #ffb3c6;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #ff8fab;
+    color: white;
+}
+
+tr:hover {
+    background-color: #fff0f5;
+}
+
+/* ============================================================
+   6. FOOTER
+   ============================================================ */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #ff8fab;
+    color: white;
+    margin-top: 50px;
+}
