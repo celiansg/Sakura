@@ -1,35 +1,31 @@
-/* ============================================================
-   1. BASE ET IMAGE DE FOND (Appliqué à tous les onglets)
-   ============================================================ */
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
-    /* Propriétés de fond du cours */
-    background-image: url('fond.jpg'); /* Ton image locale */
-    background-attachment: fixed;           /* Le fond ne bouge pas */
-    background-size: cover;                /* Couvre tout l'écran */
+    
+    background-image: url('fond.jpg'); 
+    background-attachment: fixed;           
+    background-size: cover;                
     background-repeat: no-repeat;
     
-    /* Espace pour le menu fixe (ordinateur) */
+    
     margin-top: 170px; 
 }
 
-/* ============================================================
-   2. HEADER ET NAVIGATION FIXE
-   ============================================================ */
+
 header {
     background-color: #ff8fab;
     padding: 20px 0;
     text-align: center;
     color: white;
     
-    /* Positionnement fixe (vu dans le cours) */
+    
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; /* Reste au-dessus du contenu */
+    z-index: 10; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -41,9 +37,9 @@ header h1 {
 
 nav {
     margin-top: 15px;
-    display: flex;       /* Flexbox pour le menu */
+    display: flex;       
     justify-content: center;
-    flex-wrap: wrap;     /* Permet de passer à la ligne sur mobile */
+    flex-wrap: wrap;     
 }
 
 nav a {
@@ -54,29 +50,27 @@ nav a {
     text-decoration: none;
     color: #ff4d88;
     font-weight: bold;
-    transition: 0.3s;    /* Animation douce */
+    transition: 0.3s;    
 }
 
-/* Apparence dynamique au survol */
+
 nav a:hover {
     background-color: #ff4d88;
     color: white;
 }
 
-/* Style pour l'onglet de la page actuelle */
+
 nav a.active {
     background-color: #ff4d88;
     color: white;
 }
 
-/* ============================================================
-   3. STRUCTURE DES BLOCS (CONTENUS BLANCS)
-   ============================================================ */
+
 #bloc {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto 30px auto;
-    background-color: rgba(255, 255, 255, 0.9); /* Blanc transparent */
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 25px;
     border-radius: 20px;
     box-shadow: 6px 6px 0px #ffb3c6;
@@ -90,18 +84,16 @@ nav a.active {
 h2 {
     color: #ff4d88;
     text-align: center;
-    border-bottom: 2px dashed #ffb3c6; /* Bordure pointillée du cours */
+    border-bottom: 2px dashed #ffb3c6; 
     padding-bottom: 10px;
 }
 
-/* ============================================================
-   4. SYSTÈME DE CARTES (FLEXBOX)
-   ============================================================ */
+
 .container-news {
     display: flex;
-    flex-wrap: wrap;      /* Retour à la ligne auto (responsive) */
+    flex-wrap: wrap;     
     justify-content: center;
-    gap: 25px;            /* Espace entre les cartes */
+    gap: 25px;            
 }
 
 .item-card {
@@ -113,16 +105,16 @@ h2 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Effet Zoom au survol (:hover) */
+
 .item-card:hover {
-    transform: scale(1.05); /* Agrandissement du cours */
+    transform: scale(1.05); 
     box-shadow: 0 10px 20px rgba(255, 77, 136, 0.3);
 }
 
 .item-card img {
     width: 100%;
     height: 380px;
-    object-fit: cover; /* Image bien cadrée */
+    object-fit: cover; 
 }
 
 .item-info {
@@ -136,17 +128,13 @@ h2 {
 
 .resume {
     font-size: 0.9em;
-    font-style: italic; /* Italique du cours */
-    color: #555;
+    font-style: italic; 
     margin-top: 10px;
 }
 
-/* ============================================================
-   5. MODE RESPONSIVE (Téléphones)
-   ============================================================ */
+
 @media screen and (max-width: 768px) {
     body {
-        /* On augmente la marge car le menu prend plus de place sur mobile */
         margin-top: 220px; 
     }
 
@@ -165,17 +153,15 @@ h2 {
     }
 
     .item-card {
-        width: 100%; /* Les cartes prennent toute la largeur sur mobile */
+        width: 100%; 
         max-width: 350px;
     }
 }
 
-/* ============================================================
-   6. TABLEAUX ET FOOTER
-   ============================================================ */
+
 table {
     width: 100%;
-    border-collapse: collapse; /* Fusion des bordures du cours */
+    border-collapse: collapse; 
 }
 
 th, td {
