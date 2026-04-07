@@ -1,27 +1,30 @@
 /* ============================================================
-   1. STYLE GÉNÉRAL ET FOND (Body)
+   1. BASE ET IMAGE DE FOND (Appliqué à tous les onglets)
    ============================================================ */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Image de fond sur tous les onglets */
-    background-image: url('fond.jpg'); 
-    background-attachment: fixed; /* Fixe le fond au défilement */
-    background-size: cover;      /* Couvre tout l'écran */
+    
+    /* Propriétés de fond du cours */
+    background-image: url('fond.jpg'); /* Ton image locale */
+    background-attachment: fixed;           /* Le fond ne bouge pas */
+    background-size: cover;                /* Couvre tout l'écran */
     background-repeat: no-repeat;
-    /* Espace pour ne pas que le contenu soit caché sous le menu fixe */
+    
+    /* Espace pour le menu fixe (ordinateur) */
     margin-top: 170px; 
 }
 
 /* ============================================================
-   2. MENU DE NAVIGATION (Header fixe)
+   2. HEADER ET NAVIGATION FIXE
    ============================================================ */
 header {
     background-color: #ff8fab;
     padding: 20px 0;
     text-align: center;
     color: white;
-    /* Positionnement fixe en haut (vu dans le cours) */
+    
+    /* Positionnement fixe (vu dans le cours) */
     position: fixed;
     top: 0;
     left: 0;
@@ -32,71 +35,73 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.2em;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 nav {
     margin-top: 15px;
+    display: flex;       /* Flexbox pour le menu */
+    justify-content: center;
+    flex-wrap: wrap;     /* Permet de passer à la ligne sur mobile */
 }
 
 nav a {
-    margin: 0 10px;
+    margin: 5px 10px;
     padding: 10px 20px;
     background-color: white;
-    border-radius: 25px; /* Bordure arrondie */
+    border-radius: 25px;
     text-decoration: none;
     color: #ff4d88;
     font-weight: bold;
-    transition: 0.3s; /* Pour un effet fluide */
+    transition: 0.3s;    /* Animation douce */
 }
 
-/* Apparence dynamique (vu dans le cours) */
+/* Apparence dynamique au survol */
 nav a:hover {
     background-color: #ff4d88;
     color: white;
 }
 
-/* Classe pour l'onglet actif */
+/* Style pour l'onglet de la page actuelle */
 nav a.active {
     background-color: #ff4d88;
     color: white;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
 }
 
 /* ============================================================
-   3. STRUCTURE DES BLOCS (Conteneurs blancs)
+   3. STRUCTURE DES BLOCS (CONTENUS BLANCS)
    ============================================================ */
 #bloc {
     width: 90%;
     max-width: 1000px;
-    margin: 0 auto 30px auto; /* Centrage horizontal */
-    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc transparent */
-    padding: 30px;
+    margin: 0 auto 30px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Blanc transparent */
+    padding: 25px;
     border-radius: 20px;
-    box-shadow: 8px 8px 0px #ffb3c6; /* Ombre décalée */
+    box-shadow: 6px 6px 0px #ffb3c6;
     transition: 0.3s;
 }
 
 #bloc:hover {
-    box-shadow: 12px 12px 0px #ff8fab;
+    box-shadow: 10px 10px 0px #ff8fab;
 }
 
 h2 {
     color: #ff4d88;
     text-align: center;
-    border-bottom: 2px dashed #ffb3c6;
+    border-bottom: 2px dashed #ffb3c6; /* Bordure pointillée du cours */
     padding-bottom: 10px;
 }
 
 /* ============================================================
-   4. SYSTÈME DE CARTES (Manga et Animé - Flexbox)
+   4. SYSTÈME DE CARTES (FLEXBOX)
    ============================================================ */
 .container-news {
-    display: flex;       /* Conteneur Flex */
-    flex-wrap: wrap;     /* Retour à la ligne automatique */
-    justify-content: center; /* Alignés au centre */
-    gap: 30px;           /* Espace entre les éléments */
+    display: flex;
+    flex-wrap: wrap;      /* Retour à la ligne auto (responsive) */
+    justify-content: center;
+    gap: 25px;            /* Espace entre les cartes */
 }
 
 .item-card {
@@ -104,20 +109,20 @@ h2 {
     background-color: white;
     border-radius: 15px;
     border: 1px solid #ffb3c6;
-    overflow: hidden;    /* Coupe ce qui dépasse des arrondis */
+    overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Effet zoom au passage de la souris (vu dans le cours) */
+/* Effet Zoom au survol (:hover) */
 .item-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Agrandissement du cours */
     box-shadow: 0 10px 20px rgba(255, 77, 136, 0.3);
 }
 
 .item-card img {
     width: 100%;
-    height: 400px;
-    object-fit: cover; /* Recadre sans déformer */
+    height: 380px;
+    object-fit: cover; /* Image bien cadrée */
 }
 
 .item-info {
@@ -131,61 +136,60 @@ h2 {
 
 .resume {
     font-size: 0.9em;
-    font-style: italic; /* Texte en italique */
+    font-style: italic; /* Italique du cours */
     color: #555;
     margin-top: 10px;
-    line-height: 1.4;
 }
 
 /* ============================================================
-   5. SECTIONS SPÉCIFIQUES (Infos Index et Tableaux)
+   5. MODE RESPONSIVE (Téléphones)
    ============================================================ */
+@media screen and (max-width: 768px) {
+    body {
+        /* On augmente la marge car le menu prend plus de place sur mobile */
+        margin-top: 220px; 
+    }
 
-/* Box de chiffres clés sur l'index */
-.box-info {
-    flex: 1;
-    min-width: 200px;
-    background-color: #fff0f5;
-    padding: 20px;
-    border-radius: 15px;
-    border: 2px dashed #ff8fab;
-    text-align: center;
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+
+    #bloc {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .item-card {
+        width: 100%; /* Les cartes prennent toute la largeur sur mobile */
+        max-width: 350px;
+    }
 }
 
-.box-info h3 {
-    font-size: 2.2em;
-    color: #ff4d88;
-    margin: 0;
-}
-
-/* Tableaux (pour les animés) */
+/* ============================================================
+   6. TABLEAUX ET FOOTER
+   ============================================================ */
 table {
     width: 100%;
-    border-collapse: collapse; /* Fusion des bordures */
+    border-collapse: collapse; /* Fusion des bordures du cours */
 }
 
 th, td {
     border: 1px solid #ffb3c6;
-    padding: 12px;
+    padding: 10px;
     text-align: left;
 }
 
-th {
-    background-color: #ff8fab;
-    color: white;
-}
+th { background-color: #ff8fab; color: white; }
 
-tr:hover {
-    background-color: #fff0f5;
-}
-
-/* ============================================================
-   6. FOOTER
-   ============================================================ */
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 25px;
     background-color: #ff8fab;
     color: white;
-    margin-top: 50px;
+    margin-top: 40px;
 }
